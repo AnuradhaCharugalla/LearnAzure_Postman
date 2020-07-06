@@ -1,0 +1,124 @@
+{
+	"id": "4973d5fd-d99c-4925-877f-638fb3e7dde6",
+	"values": [
+		{
+			"key": "baseURL",
+			"value": "https://reqres.in/",
+			"enabled": true
+		},
+		{
+			"key": "systemID",
+			"value": "2a1e00cb-d124-4a48-881d-11b3d4cfb1f9",
+			"enabled": true
+		},
+		{
+			"key": "localHost",
+			"value": "http://localhost/WebAPI/",
+			"enabled": true
+		},
+		{
+			"key": "webHost",
+			"value": "https://webapitest.westeurope.cloudapp.azure.com/WebAPI/",
+			"enabled": true
+		},
+		{
+			"key": "localUsername",
+			"value": "iap\\acharugalla",
+			"enabled": true
+		},
+		{
+			"key": "localPassword",
+			"value": "Himmu@1417Nitya",
+			"enabled": true
+		},
+		{
+			"key": "webUsername",
+			"value": "apiuser",
+			"enabled": true
+		},
+		{
+			"key": "webPassword",
+			"value": "qc5MQ$z!",
+			"enabled": true
+		},
+		{
+			"key": "manifestID",
+			"value": "7219a537-1c0b-437d-8aa6-6293066029b0",
+			"enabled": true
+		},
+		{
+			"key": "numberRecords",
+			"value": "4",
+			"enabled": true
+		},
+		{
+			"key": "end",
+			"value": "20200630T000000Z",
+			"enabled": true
+		},
+		{
+			"key": "state",
+			"value": "false",
+			"enabled": true
+		},
+		{
+			"key": "containerCode",
+			"value": "Container418",
+			"enabled": true
+		},
+		{
+			"key": "inspectState",
+			"value": "1",
+			"enabled": true
+		},
+		{
+			"key": "inspectClass",
+			"value": "none",
+			"enabled": true
+		},
+		{
+			"key": "portID",
+			"value": "Not Configured",
+			"enabled": true
+		},
+		{
+			"key": "terminalID",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "fieldID",
+			"value": "Comments",
+			"enabled": true
+		},
+		{
+			"key": "fieldValue",
+			"value": "Comments418",
+			"enabled": true
+		},
+		{
+			"key": "alarmType",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "fileID",
+			"value": "2b415f73-f82e-440a-a22e-975fb8be5053",
+			"enabled": true
+		},
+		{
+			"key": "plateID",
+			"value": "ANPR418",
+			"enabled": true
+		},
+		{
+			"key": "start",
+			"value": "20200103T000000Z",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-07-04T17:11:35.032Z",
+	"_postman_exported_using": "Postman/7.27.1"
+}

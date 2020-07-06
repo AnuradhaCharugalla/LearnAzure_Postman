@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "cc9df8c9-fc1a-49e4-bb4b-03b3a2372e1f",
+		"name": "TestCase_Cargo_Collection",
+		"description": "This collection talks about the test verfictions done on Particular API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET_MostRecent_N_Records",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7db35858-7f60-4bdc-bc50-219c4b09a384",
+						"exec": [
+							"\r",
+							"pm.test(\"Verify Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify Number of Manifests\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect( Object.keys(jsonData.ManifestList).length).to.eql(parseInt(data.numberRecords));\r",
+							"  });\r",
+							"  \r",
+							"pm.test(\"Verify Manifest ID's\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"      for (i = 0; i< data.numberRecords; i++){\r",
+							"      pm.expect(jsonData.ManifestList[i].ManifestID).to.eql(data[\"ManifestID\" + i]);\r",
+							"      console.log (\"Verified \"+ \"manifestID\"+ i+\"th record.\")\r",
+							"      \r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify InspectDone Status\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"     for (i = 0; i< data.numberRecords; i++){\r",
+							"      pm.expect(jsonData.ManifestList[i].Inspection.InspectDone).to.eql(true);\r",
+							"     }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify InspectResult String\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"     for (i = 0; i< data.numberRecords; i++){\r",
+							"      pm.expect(jsonData.ManifestList[i].Inspection.InspectResult).to.eql(\"clean\");\r",
+							"     }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify InspectResultClass Level and Name Status\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"     for (i = 0; i< data.numberRecords; i++){\r",
+							"      pm.expect(jsonData.ManifestList[i].Inspection.InspectResultClass.Level).to.eql(0);\r",
+							"       pm.expect(jsonData.ManifestList[i].Inspection.InspectResultClass.Name).to.eql(\"none\");\r",
+							"     }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localHost}}cargo/api/manifest/mostrecent/{{numberRecords}}",
+					"host": [
+						"{{localHost}}cargo"
+					],
+					"path": [
+						"api",
+						"manifest",
+						"mostrecent",
+						"{{numberRecords}}"
+					]
+				},
+				"description": "The method shall return a list of the N most recently generated manifests that have been flagged as having completed an x-ray scan and that have not been archived."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{localUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{localPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
